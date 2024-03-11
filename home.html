@@ -1,0 +1,23 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+
+<div style="margin-bottom: 30px;"></div>
+
+    <form action="{% url 'listagem_usuarios' %}" method="post">
+        {% csrf_token %}
+        <div style="width: 300px; background-color: rgb(219, 223, 224);" class="container form-control-sm">
+            <div style="text-align: center;" class="container">
+                <h1>Cadastre-se</h1> 
+                <div style="margin-bottom: 4px;"><h4>Nome</h4></div> <div><input name="nome" class="form-control-sm" type="text" placeholder="Digite seu nome"></div>
+
+                <div style="margin-bottom: 4px;"><h4>Email</h4> </div> <div><input name="email" class="form-control-sm" type="text" placeholder="seuemail@gmail.com"></div>
+
+                <div style="margin-bottom: 4px;"><h4>Nascimento</h4> </div> <div><input name="nascimento" class="form-control-sm" type="date"></div>
+
+                <div style="margin-bottom: 4px;"><h4>CPF</h4> </div> <div><input name="cpf" class="form-control-sm" type="text" placeholder="000.000.000.00"></div>
+
+                <div style="margin-top: 4px; height:50px"><button class="form-control-sm">Enviar</button><div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
